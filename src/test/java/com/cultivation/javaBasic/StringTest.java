@@ -2,6 +2,9 @@ package com.cultivation.javaBasic;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -187,7 +190,7 @@ class StringTest {
 
         // TODO: Modify the following code to create new string from original String
         // <--Start
-        final String reversed = null;
+        final String reversed = new StringBuilder().append(original).reverse().toString();
         // --End-->
 
         assertEquals("654321", reversed);
