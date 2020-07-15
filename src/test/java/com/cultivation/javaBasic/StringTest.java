@@ -35,7 +35,7 @@ class StringTest {
         //
         // It is really easy to pass the test. But you have to tell why.
         // <--start
-        final Optional<Boolean> areSame = Optional.empty();
+        final Optional<Boolean> areSame = Optional.of(false);
         // --end-->
 
         assertEquals("The string with tailing space.", modifiedString);
@@ -53,7 +53,7 @@ class StringTest {
         //
         // It is really easy to pass the test. But you have to tell why.
         // <--start
-        final Optional<Boolean> areSame = Optional.empty();
+        final Optional<Boolean> areSame = Optional.of(false);
         // --end-->
 
         assertEquals("Part one. Part two.", originalString);
@@ -67,7 +67,7 @@ class StringTest {
 
         // TODO: Take part of the original string according to expectation.
         // <--start
-        final String partOfString = null;
+        final String partOfString = originalString.substring(5);
         // --end-->
 
         final String expectedString = "is great";
@@ -82,7 +82,7 @@ class StringTest {
 
         // TODO: Take part of the original string according to expectation.
         // <--start
-        final String partOfString = null;
+        final String partOfString = originalString.substring(5, 7);
         // --end-->
 
         final String expectedString = "is";
@@ -105,7 +105,7 @@ class StringTest {
 
         // TODO: Extract words in the sentence.
         // <--Start
-        String[] words = null;
+        String[] words = sentence.split(" ");
         // --End-->
 
         assertArrayEquals(new String[] {"This", "is", "Mike"}, words);
@@ -118,7 +118,8 @@ class StringTest {
 
         // TODO: Extract words in the sentence.
         // <--Start
-        String[] words = null;
+        String[] words = sentence.split("/");
+
         // --End-->
 
         assertArrayEquals(new String[] {"This", "is", "Mike"}, words);
@@ -133,6 +134,9 @@ class StringTest {
         // TODO: Create string using StringBuilder
         // <--Start
         StringBuilder builder = new StringBuilder();
+        builder.append("|---|\n")
+                .append("|   |\n")
+                .append("|---|\n");
         // --End-->
 
         final String expected =
@@ -151,6 +155,10 @@ class StringTest {
         int sum = 0;
         // TODO: Write some code to calculate the checksum of the string. The checksum is the sum of each string char.
         // <--Start
+        char[] chars = text.toCharArray();
+        for (char letter : chars) {
+            sum += letter;
+        }
         // --End-->
 
         assertEquals(3655, sum);
